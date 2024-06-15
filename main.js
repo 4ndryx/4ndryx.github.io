@@ -133,7 +133,7 @@ function calcInter(){
     }
     if (conf == 95){
         li = (med/n) - 1.96*dev/Math.sqrt(n)
-        lS = (med/n) + 1.96*dev/Math.sqrt(n)
+        ls = (med/n) + 1.96*dev/Math.sqrt(n)
     }
 
     p = document.createElement('p')
