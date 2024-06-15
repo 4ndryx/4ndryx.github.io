@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Calculadora estimacion puntu y por intervalos</title>
+</head>
+<body>
+    <!-- <div class="bg-image" style="background-image: url('bg.jpg');height: 100vh;">  -->
+    <div class="bg-white" style="height: 100vh;"> 
+        <div class="col-8 bg-light m-auto p-4" style=" min-height:100vh;">
+            <h1 class = 'text-center'>Calculadora de Estimaciones</h1><br><br>
+            <h3 class="text-center">Por favor elegir el tipo de estimacion que desea realizar.</h3>
+            <div>
+                <p class="text-center">
+                    <a class="btn btn-primary"  onclick="colla1()" data-bs-toggle="collapse" href="#collapseExample1" role="button" aria-expanded="false" aria-controls="collapseExample">
+                      Puntual
+                    </a>
+                    <button class="btn btn-primary"  onclick="colla2()" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                      Por intervalos
+                    </button>
+                  </p>
+                  <div class="collapse" id="collapseExample1" id = "colla1" >
+                    <div class="card card-body d-flex" >
+                        <div class=""><p>Elegir el estimador <select onchange="extraData()" name="" id="estimador"><option value="Media">Media Muestral</option>
+                            <option value="Porcion">Porcion Muestral</option>
+                            <option value="Varianza">Varianza Muestral</option></select></p> </div>
+                        <div class="" id="extradata">
+                            <div class="row d-none" id = "proporcion">
+                                <p>Colocar la cantidad para la proporcion <input class = "col-1 m-2" type="number" name="" id="prop"></p>
+                            </div>
+                        </div>
+                        <div class="">Colocar el numero de observaciones para generar los campos a llenar: <br><input class="col-1 my-2" type="number" name="" id="puntInput"> <button id = "puntInputBtn" onclick = "createDataInputs()" class="col-2" type="submit">Generar</button></div>
+                        <div class="row" id = "cardpunt"></div>
+                        <div><button class="text-center" type="submit" onclick="calc()">Calcular</button></div>
+                        <div id="result"></div>
+                    </div>
+                  </div>
+                  <div class="collapse" id="collapseExample" id = "colla2" >
+                    <div class="card card-body d-flex" >
+                        <div class=""><p>Estimacion de la media</p> </div>
+                        <div class="" id="extradata">
+                            <div class="row" id = "proporcion">
+                                <p>Colocar la desviacion estandar <input class = "col-1 m-2" type="number" name="" id="dev"></p>
+                            </div>
+                            <div class=""><p>Elegir el nivel de confianza <select onchange="" name="" id="conf"><option value="99">99%</option>
+                                <option value="95">95%</option></select></p> </div>
+                        </div>
+                        <div class="">Colocar el numero de observaciones para generar los campos a llenar: <br><input class="col-1 my-2" type="number" name="" id="intInput"> <button id = "puntInputBtn" onclick = "createDataInputsInt()" class="col-2" type="submit">Generar</button></div>
+                        <div class="row" id = "cardint"></div>
+                        <div><button class="text-center" type="submit" onclick="calcInter()">Calcular</button></div>
+                        <div id="resultint"></div>
+
+                  </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    <script src="main.js"></script>
+</body>
+</html>
